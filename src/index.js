@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'karet';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
