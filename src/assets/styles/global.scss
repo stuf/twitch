@@ -1,0 +1,27 @@
+$base-viewport-width: 1280px;
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body, #root {
+  font-family: 'Circular Std';
+}
+
+.align {
+  position: absolute;
+
+  &-left { left: 0; }
+  &-top { top: 0; }
+  &-right { right: 0; }
+  &-bottom { bottom: 0; }
+}
+
+.aspect {
+  &-16-9 {
+    width: $base-viewport-width;
+    height: $base-viewport-width / (16 / 9);
+  }
+}
