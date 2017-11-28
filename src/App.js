@@ -20,7 +20,8 @@ const App = ({ aspectRatio }) =>
                             getAspectRatio(aspectRatio))}>
     <section className="safe">
       <Clock />
-      <TitleCard title="Top kek"
+      <TitleCard align="bottom right"
+                 title="Top kek"
                  subTitle="This is a subtitle" />
     </section>
   </section>;
