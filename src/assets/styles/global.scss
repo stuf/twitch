@@ -1,4 +1,8 @@
-$base-viewport-width: 1280px;
+$base-viewport-width: 1920px;
+
+$base-font-size: 3vh;
+$base-font-family: 'Bahnschrift';
+$base-font-family-monospace: 'Iosevka';
 
 html, body {
   height: 100vh;
@@ -7,7 +11,8 @@ html, body {
 }
 
 body, #root {
-  font-family: 'Circular Std';
+  font-size: $base-font-size;
+  font-family: $base-font-family;
 }
 
 h1, h2, h3, h4, h5, h6 {
