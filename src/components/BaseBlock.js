@@ -10,7 +10,7 @@ const BASENAME = 'BaseBlock';
 const getAlignment = x => U.string`align-${x}`;
 
 const getAlignments =
-  U.pipe(U.when(U.test(/\-/), U.split('-')),
+  U.pipe(U.when(U.test(/-/), U.split('-')),
          U.when(U.test(/\s/), U.split(' ')),
          U.unless(U.is(Array), U.of),
          U.map(getAlignment),

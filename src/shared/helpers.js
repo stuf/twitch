@@ -28,5 +28,3 @@ const itemDateFormat = 'HH:mm';
 
 export const formatProgramStart = U.lift1Shallow(x => format(x, itemDateFormat));
 export const formatIsoTime = U.lift1Shallow(d => d.toISOString());
-
-

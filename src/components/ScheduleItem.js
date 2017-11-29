@@ -9,6 +9,7 @@ import './ScheduleItem.css';
 
 //
 
+// @fixme rename to Schedule and create appropriate 'next up' functionality
 const ScheduleItem = ({ schedule, className, align, unstyled }) => {
   return (
     <BaseBlock {...{ align,
@@ -21,6 +22,8 @@ const ScheduleItem = ({ schedule, className, align, unstyled }) => {
                U.take(1),
                U.mapElems((prog, i) =>
                  <article key={i}>
+                   {/* This was supposed to be the ScheduleItem.
+                       You're lying to me wtf. */}
                    <header>
                      {M.titleFor(prog)}
                    </header>

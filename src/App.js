@@ -25,7 +25,7 @@ const App = ({ aspectRatio }) =>
         <TitleCard {...{ unstyled: true,
                          title: 'Foo' }} />
         <ScheduleItem {...{ unstyled: true,
-                            schedule: getSchedule(H.mkDate(2017, 11, 30)) }} />
+                            schedule: getSchedule(new Date()) }} />
       </BlockList>
     </section>
   </section>;
