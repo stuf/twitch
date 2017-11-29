@@ -17,7 +17,7 @@ const ScheduleItem = ({ schedule, className, align, unstyled }) => {
                      className: U.cns(className, 'ScheduleItem') }}>
       <section>
         <header className="heading-next-up">Next up</header>
-        {U.seq(schedule,
+        {U.seq(schedule.log('schedule'),
                U.view('programs'),
                U.take(1),
                U.mapElems((prog, i) =>

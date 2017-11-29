@@ -1,5 +1,4 @@
 import * as React from 'karet';
-import * as U from 'karet.util';
 import { interval } from 'kefir';
 import { format } from 'date-fns';
 
