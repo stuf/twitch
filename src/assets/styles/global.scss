@@ -1,8 +1,4 @@
-$base-viewport-width: 1920px;
-
-$base-font-size: 3vh;
-$base-font-family: 'Bahnschrift';
-$base-font-family-monospace: 'Iosevka';
+@import 'variables';
 
 html, body {
   height: 100vh;

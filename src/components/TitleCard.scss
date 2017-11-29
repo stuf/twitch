@@ -1,3 +1,14 @@
+@import '../assets/styles/variables';
+
 .TitleCard {
-  border: solid 1px #f00;
+  p.main,
+  p.sub {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .main {
+    font-size: $block-heading-size;
+    font-weight: $block-heading-weight;
+  }
 }

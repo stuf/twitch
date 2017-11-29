@@ -1,0 +1,15 @@
+$base-viewport-width: 1680px;
+
+/* Remember to set base font size to something viewport-relative (e.g. `vh`),
+   to make everything scale nicely. */
+
+$base-font-size: 3vh;
+$base-font-family: 'Bahnschrift';
+$base-font-family-monospace: 'Iosevka';
+
+/**
+ * Base typography dimensions
+ */
+
+$block-heading-size: $base-font-size;
+$block-heading-weight: 400;

@@ -3,8 +3,6 @@ import * as U from 'karet.util';
 
 import './BaseBlock.css';
 
-//
-
 const BASENAME = 'BaseBlock';
 
 //
@@ -21,11 +19,12 @@ const getAlignments =
 const Block = ({
   children,
   className,
-  align = 'top left',
+  align,
+  unstyled = false,
 
   _alignments = U.ift(align, getAlignments(align))
 }) =>
-  <section className={U.cns(BASENAME, className, _alignments)}>
+  <section className={U.cns(BASENAME, U.ifte(unstyled, 'plain', 'styled'), className, _alignments)}>
     {children}
   </section>;
 

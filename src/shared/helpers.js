@@ -21,3 +21,12 @@ export const getAspectRatio =
                   U.always('no-aspect-ratio'),
                   U.pipe(U.replace(':', '-'),
                          prefix('has-aspect-ratio aspect-'))));
+
+// Programming
+
+const itemDateFormat = 'HH:mm';
+
+export const formatProgramStart = U.lift1Shallow(x => format(x, itemDateFormat));
+export const formatIsoTime = U.lift1Shallow(d => d.toISOString());
+
+

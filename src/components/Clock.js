@@ -13,8 +13,8 @@ const getTick = time => interval(time, null).toProperty(timeTick);
 
 //
 
-const Clock = ({ tickInterval = 500, timeFormat = 'HH:mm:ss' }) =>
-  <BaseBlock className="Clock">
+const Clock = ({ tickInterval = 500, timeFormat = 'HH:mm:ss', ...props }) =>
+  <BaseBlock {...props}>
     {getTick(tickInterval).map(timeTick).map(d => format(d, timeFormat))}
   </BaseBlock>;
 

@@ -4,18 +4,16 @@ import * as U from 'karet.util';
 import './TitleCard.css';
 import BaseBlock from './BaseBlock';
 
-const TitleCard = ({ title, subTitle, align }) =>
-  <BaseBlock {...{ align }}>
+const BASENAME = 'TitleCard';
+
+const TitleCard = ({ title, subTitle, ...props }) =>
+  <BaseBlock {...{ ...props,
+                   className: U.cns(BASENAME, props.className) }}>
     <header>
-      <h1>{title}</h1>
+      <p className="main">{title}</p>
       {U.ift(subTitle,
-           <h2>{subTitle}</h2>)}
+           <p className="sub">{subTitle}</p>)}
     </header>
   </BaseBlock>;
-
-/*
-  <article className={U.cns('TitleCard', 'align', 'align-bottom', 'align-right')}>
-  </article>
-*/
 
 export default TitleCard;

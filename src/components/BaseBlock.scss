@@ -1,7 +1,13 @@
 $block-base-padding: 1rem;
 
 .BaseBlock {
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
-  padding: $block-base-padding $block-base-padding * 1.5;
+  &.styled {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
+    padding: $block-base-padding $block-base-padding * 1.5;
+  }
+
+  &.animate-enter {
+    transition: opacity 0.4s transform 0.4s;
+  }
 }

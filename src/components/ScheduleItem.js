@@ -1,46 +1,35 @@
 import * as React from 'karet';
 import * as U from 'karet.util';
-import {
-  format,
-  distanceInWords
-} from 'date-fns';
 
 import BaseBlock from './BaseBlock';
+import * as H from '../shared/helpers';
+import { Schedule as M } from './meta';
 
 import './ScheduleItem.css';
 
-const itemDateFormat = 'HH:mm';
-
-const startTimeFor = U.view('startTime');
-const titleFor = U.view('title');
-const descriptionFor = U.view('description');
-
-const formatProgramStart = U.lift1Shallow(x => format(x, itemDateFormat));
-const formatIsoTime = U.invoker(1, 'toISOString');
-
 //
 
-const ScheduleItem = ({ schedule, className, align }) => {
+const ScheduleItem = ({ schedule, className, align, unstyled }) => {
   return (
-    <BaseBlock {...{ align, className: U.cns(className, 'ScheduleItem') }}>
+    <BaseBlock {...{ align,
+                     unstyled,
+                     className: U.cns(className, 'ScheduleItem') }}>
       <section>
-        <aside>Next up</aside>
-        <header>
-          {U.seq(schedule,
-                 U.view('programs'),
-                 U.take(1),
-                 U.mapElems((prog, i) =>
-                   <article key={i}>
-                     <header>
-                       {titleFor(prog)}
-                     </header>
-                     <time datetime={U.seq(startTimeFor(prog),
-                                           formatIsoTime)}>
-                       {U.seq(startTimeFor(prog),
-                              formatProgramStart)}
-                     </time>
-                   </article>))}
-        </header>
+        <header className="heading-next-up">Next up</header>
+        {U.seq(schedule,
+               U.view('programs'),
+               U.take(1),
+               U.mapElems((prog, i) =>
+                 <article key={i}>
+                   <header>
+                     {M.titleFor(prog)}
+                   </header>
+                   <time dateTime={U.seq(M.startTimeFor(prog),
+                                         H.formatIsoTime)}>
+                     {U.seq(M.startTimeFor(prog),
+                            H.formatProgramStart)}
+                   </time>
+                 </article>))}
       </section>
     </BaseBlock>
   );
