@@ -10,8 +10,18 @@ const parseAlignment =
                   U.append('align')),
            U.always(undefined));
 
-const Block = ({ className, alignment, children, ...props }) =>
+const ifPadChildren =
+  U.ifElse(U.identity,
+           U.always('pad-children'),
+           U.always('pad-self'));
+
+const Block = ({ className,
+                 alignment,
+                 children,
+                 padChildren,
+                 ...props }) =>
   <div className={U.cns('block',
+                        ifPadChildren(padChildren),
                         parseAlignment(alignment),
                         className)}>
     {children}

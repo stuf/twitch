@@ -1,3 +1,35 @@
 .ticker {
-  border: solid 2px #f00;
+  p {
+    &.title {
+      font-weight: bold;
+    }
+
+    margin: 0;
+    width: 20rem;
+  }
+
+  &-message {
+    &.animate {
+      svg {
+        width: 100%;
+        height: 1rem;
+
+        rect {
+          animation-timing-function: linear;
+          animation-name: progress;
+          // transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }

@@ -4,7 +4,10 @@
 import * as U from 'karet.util';
 import * as R from 'ramda';
 import {
-  stream
+  stream,
+  later,
+  constant,
+  Observable
 } from 'kefir';
 import {
   format
@@ -16,6 +19,8 @@ export const notNil = U.complement(U.isNil);
 export const notEmpty = U.complement(U.isEmpty);
 
 // Kefir
+
+export const toConstant = x => x instanceof Observable ? x : constant(x);
 
 export const delayedConstant =
   (delay, value) =>
@@ -30,6 +35,15 @@ export const delayedConstant =
 
 export const mkDate = R.constructN(3, Date);
 export const mkDateTime = R.constructN(6, Date);
+
+// Animate
+
+export const quickToggle = name =>
+  U.seq(toConstant(name),
+        U.flatMapLatest(v => later(5, '')),
+        U.flatMapLatest(v => constant(name)))
+
+
 
 // Presentation & layers
 
