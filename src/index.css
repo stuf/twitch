@@ -1,3 +1,15 @@
+/* Remember to set base font size to something viewport-relative (e.g. `vh`),
+   to make everything scale nicely. */
+/**
+ * Base typography dimensions
+ */
+.block {
+  background-color: white;
+  padding: 0.8rem 1rem; }
+
+.ticker {
+  border: solid 2px #f00; }
+
 * {
   box-sizing: border-box; }
 
@@ -7,7 +19,3 @@ body {
   font-family: sans-serif;
   background: rgba(0, 0, 0, 0.2);
   border: solid 2px #f00; }
-
-.block {
-  background-color: white;
-  padding: 0.8rem 1rem; }

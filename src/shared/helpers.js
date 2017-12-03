@@ -4,8 +4,27 @@
 import * as U from 'karet.util';
 import * as R from 'ramda';
 import {
+  stream
+} from 'kefir';
+import {
   format
 } from 'date-fns';
+
+// Complementary helpers
+
+export const notNil = U.complement(U.isNil);
+export const notEmpty = U.complement(U.isEmpty);
+
+// Kefir
+
+export const delayedConstant =
+  (delay, value) =>
+    stream(emitter => {
+      emitter.emit(value);
+      setTimeout(() => {
+        emitter.end();
+      }, delay);
+    });
 
 // Datetime
 
