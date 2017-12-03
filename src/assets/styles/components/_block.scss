@@ -1,0 +1,16 @@
+.block {
+  background-color: rgb(255, 255, 255);
+
+  &.pad-self,
+  &:not(.pad-children) {
+    padding: $block-padding-y $block-padding-x;
+  }
+
+  &.pad-children > div {
+    padding: $block-padding-y $block-padding-x;
+
+    & + div {
+      padding-top: 0;
+    }
+  }
+}

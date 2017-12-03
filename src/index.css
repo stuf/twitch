@@ -1,4 +1,45 @@
+/* Remember to set base font size to something viewport-relative (e.g. `vh`),
+   to make everything scale nicely. */
+/**
+ * Base typography dimensions
+ */
+/**
+ * Block component
+ */
+.block {
+  background-color: white; }
+  .block.pad-self, .block:not(.pad-children) {
+    padding: 0.8rem 1rem; }
+  .block.pad-children > div {
+    padding: 0.8rem 1rem; }
+    .block.pad-children > div + div {
+      padding-top: 0; }
+
+.ticker p {
+  margin: 0;
+  width: 20rem; }
+  .ticker p.title {
+    font-weight: bold; }
+
+.ticker-message.animate svg {
+  width: 100%;
+  height: 1rem; }
+  .ticker-message.animate svg rect {
+    animation-timing-function: linear;
+    animation-name: progress; }
+
+@keyframes progress {
+  from {
+    transform: translateX(-100%); }
+  to {
+    transform: translateX(0); } }
+
+* {
+  box-sizing: border-box; }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  background: rgba(0, 0, 0, 0.2);
+  border: solid 2px #f00; }

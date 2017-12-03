@@ -4,7 +4,7 @@ $base-viewport-width: 1680px;
    to make everything scale nicely. */
 
 $base-font-size: 3vh;
-$base-font-family: 'Bahnschrift';
+$base-font-family: 'Woodford Bourne PRO', Bahnschrift;
 $base-font-family-monospace: 'Iosevka';
 
 /**
@@ -13,3 +13,10 @@ $base-font-family-monospace: 'Iosevka';
 
 $block-heading-size: $base-font-size;
 $block-heading-weight: 400;
+
+/**
+ * Block component
+ */
+$block-padding: 1rem;
+$block-padding-x: $block-padding;
+$block-padding-y: $block-padding * 0.8;

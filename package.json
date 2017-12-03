@@ -1,5 +1,21 @@
 {
   "name": "twitch",
+  "description": "Twitch overlay created with Calmm.js",
+  "author": {
+    "name": "Stefan Rimaila",
+    "email": "stefan@rimaila.fi",
+    "url": "https://github.com/stuf"
+  },
+  "keywords": [
+    "calmm",
+    "partial.lenses",
+    "reactive",
+    "kefir",
+    "stream",
+    "observable",
+    "react",
+    "jsx"
+  ],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +33,8 @@
     "react-scripts": "1.0.17",
     "socket.io": "^2.0.4",
     "tcomb": "^3.2.24",
-    "tmi.js": "^1.2.1"
+    "tmi.js": "^1.2.1",
+    "uuid": "^3.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
