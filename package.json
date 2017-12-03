@@ -1,5 +1,21 @@
 {
   "name": "twitch",
+  "description": "Twitch overlay created with Calmm.js",
+  "author": {
+    "name": "Stefan Rimaila",
+    "email": "stefan@rimaila.fi",
+    "url": "https://github.com/stuf"
+  },
+  "keywords": [
+    "calmm",
+    "partial.lenses",
+    "reactive",
+    "kefir",
+    "stream",
+    "observable",
+    "react",
+    "jsx"
+  ],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
