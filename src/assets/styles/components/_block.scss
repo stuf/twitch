@@ -1,0 +1,8 @@
+$block-padding: 1rem;
+$block-padding-x: $block-padding;
+$block-padding-y: $block-padding * 0.8;
+
+.block {
+  background-color: rgb(255, 255, 255);
+  padding: $block-padding-y $block-padding-x;
+}
