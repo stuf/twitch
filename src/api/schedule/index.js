@@ -44,7 +44,7 @@ const schedules =
       ]
     }),
     Schedule({
-      date: mkDate(2017, 11, 30),
+      date: mkDate(2017, 10, 30),
       programs: [
         Program({ id: 'calmm-coding-101',
                   title: 'Coding in Calmm',
@@ -53,11 +53,22 @@ const schedules =
                   endTime: mkDateTime(2017, 11, 30, 20, 0, 0),
                   type: 'programming' }),
         Program({ id: 'overwatch-and-chill',
-                  title: 'Overwatch & Chill',
-                  description: 'Orisa\'s magical escapades in saltland.',
-                  startTime: mkDateTime(2017, 11, 30, 20, 0, 0),
-                  endTime: mkDateTime(2017, 11, 30, 22, 0, 0),
+                  title: 'Overwatch & Chill - OVER',
+                  description: '',
+                  startTime: mkDateTime(2017, 11, 30, 21, 15, 0),
+                  endTime: mkDateTime(2017, 11, 30, 23, 15, 0),
                   type: 'games' })
+      ]
+    }),
+    Schedule({
+      date: mkDate(2017, 11, 1),
+      programs: [
+        Program({ id: 'reactive-chat',
+                  title: 'Reactive Twitch Chat integration',
+                  description: 'N/A',
+                  startTime: mkDateTime(2017, 11, 1, 18, 0, 0),
+                  endTime: mkDateTime(2017, 11, 1, 20, 0, 0),
+                  type: 'programming' })
       ]
     })
   ];
@@ -68,4 +79,4 @@ export const getSchedule = date =>
   U.seq(getSchedules(),
         U.find(s => isEqual(startOfDay(s.date), startOfDay(date))),
         U.when(U.isNil, U.flatMapLatest(constantError({ msg: 'Nothing found' }))),
-        U.flatMapLatest(constant));
+        U.flatMapLatest(U.template));

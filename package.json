@@ -10,12 +10,14 @@
     "kefir": "^3.8.0",
     "normalize.css": "^7.0.0",
     "partial.lenses": "^13.1.1",
+    "partial.lenses.validation": "^0.1.1",
     "ramda": "^0.25.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts": "1.0.17",
     "socket.io": "^2.0.4",
-    "tcomb": "^3.2.24"
+    "tcomb": "^3.2.24",
+    "tmi.js": "^1.2.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",

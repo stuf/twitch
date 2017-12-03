@@ -10,29 +10,36 @@ import './ScheduleItem.css';
 //
 
 // @fixme rename to Schedule and create appropriate 'next up' functionality
-const ScheduleItem = ({ schedule, className, align, unstyled }) => {
+const ScheduleItem = ({
+  schedule,
+  className,
+  align,
+  unstyled,
+  scheduleItem = U.view(['programs', 0], schedule).log('scheduleItem')
+}) => {
   return (
     <BaseBlock {...{ align,
                      unstyled,
                      className: U.cns(className, 'ScheduleItem') }}>
       <section>
-        <header className="heading-next-up">Next up</header>
-        {U.seq(schedule.log('schedule'),
-               U.view('programs'),
-               U.take(1),
-               U.mapElems((prog, i) =>
-                 <article key={i}>
-                   {/* This was supposed to be the ScheduleItem.
-                       You're lying to me wtf. */}
-                   <header>
-                     {M.titleFor(prog)}
-                   </header>
-                   <time dateTime={U.seq(M.startTimeFor(prog),
-                                         H.formatIsoTime)}>
-                     {U.seq(M.startTimeFor(prog),
-                            H.formatProgramStart)}
-                   </time>
-                 </article>))}
+        <header className="heading-next-up">
+          <p>Next up</p>
+          <time dateTime={U.seq(M.startTimeFor(scheduleItem),
+                                H.formatIsoTime)}>
+            {U.seq(M.startTimeFor(scheduleItem),
+                    H.formatProgramStart)}
+            {' - '}
+            {U.seq(M.endTimeFor(scheduleItem),
+                    H.formatProgramStart)}
+          </time>
+        </header>
+        <article className="schedule-item">
+          {/* This was supposed to be the ScheduleItem.
+              You're lying to me wtf. */}
+          <header>
+            <p>{M.titleFor(scheduleItem)}</p>
+          </header>
+        </article>
       </section>
     </BaseBlock>
   );
