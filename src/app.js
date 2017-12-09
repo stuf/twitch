@@ -40,6 +40,25 @@ const initialMessages =
 
 const initializeMessages = () => initialMessages.forEach(commands.pushMessage);
 
+const createRandomMessage = () => ({ title: uuid(), body: uuid(), duration: ~~(Math.random()*6000)+1500 });
+
+const titles = ['Item title', 'Message', 'Next up', 'Foo', 'Bar', 'Toppest of Keks'];
+const bodyTexts =
+  ['Lorem ipsum',
+   'Never let a cat go unpetted',
+   'Another placeholder text value',
+   'Maybe there should be something else at some point.',
+   'Stuck in Silver forever. :sadface:'];
+
+const getRandom = xs => xs[Math.floor(Math.random() * xs.length)];
+
+const randomMessages = Kefir.withInterval(3000, emitter => {
+  emitter.emit(TickerMessage({ title: getRandom(titles),
+                               body: getRandom(bodyTexts),
+                               type: MessageKind.MESSAGE,
+                               duration: ~~(Math.random() * 6000) + 1500 }));
+})
+
 //
 
 const App = ({ aspectRatio, dom = U.variable() }) =>

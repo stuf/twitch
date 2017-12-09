@@ -6,6 +6,9 @@
 /**
  * Block component
  */
+/**
+ * Ticker
+ */
 .block {
   background-color: white; }
   .block.pad-self, .block:not(.pad-children) {
@@ -15,18 +18,38 @@
     .block.pad-children > div + div {
       padding-top: 0; }
 
+/* Remember to set base font size to something viewport-relative (e.g. `vh`),
+   to make everything scale nicely. */
+/**
+ * Base typography dimensions
+ */
+/**
+ * Block component
+ */
+/**
+ * Ticker
+ */
 .ticker p {
   margin: 0;
   width: 20rem; }
   .ticker p.title {
     font-weight: bold; }
 
-.ticker-message.animate svg {
-  width: 100%;
-  height: 1rem; }
-  .ticker-message.animate svg rect {
-    animation-timing-function: linear;
-    animation-name: progress; }
+.ticker-message-body {
+  clip-path: rect(0 0, 100% 0, 100% 100%, 0 100%); }
+
+.ticker-message.animate {
+  padding-bottom: 1rem; }
+  .ticker-message.animate svg.ticker-progress-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1rem; }
+    .ticker-message.animate svg.ticker-progress-bar rect {
+      animation-timing-function: linear;
+      animation-name: progress;
+      height: 1rem; }
 
 @keyframes progress {
   from {

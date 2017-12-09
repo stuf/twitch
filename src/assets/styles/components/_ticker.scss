@@ -1,3 +1,7 @@
+@import '../variables';
+
+$ticker-progress-bar-height: 1rem;
+
 .ticker {
   p {
     &.title {
@@ -8,15 +12,29 @@
     width: 20rem;
   }
 
+  &-message-body {
+    clip-path: rect(
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%);
+  }
+
   &-message {
     &.animate {
-      svg {
+      padding-bottom: $ticker-progress-bar-height;
+
+      svg.ticker-progress-bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
         width: 100%;
-        height: 1rem;
+        height: $ticker-progress-bar-height;
 
         rect {
           animation-timing-function: linear;
           animation-name: progress;
+          height: $ticker-progress-bar-height;
           // transition: all 0.5s;
         }
       }

@@ -20,3 +20,10 @@ $block-heading-weight: 400;
 $block-padding: 1rem;
 $block-padding-x: $block-padding;
 $block-padding-y: $block-padding * 0.8;
+
+/**
+ * Ticker
+ */
+$ticker-base-time: 0.7s;
+$ticker-enter-time: $ticker-base-time;
+$ticker-exit-time: $ticker-base-time;
